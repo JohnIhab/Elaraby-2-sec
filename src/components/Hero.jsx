@@ -35,11 +35,10 @@ export default function Hero() {
     ];
 
     return (
-        <Box sx={{ px: 4, py: 2, bgcolor: '#f5f5f5' }}>
+        <Box sx={{ px: 4, py: 2 }}>
             <Grid container spacing={2}>
-                {/* Slider - 70% */}
-                <Grid item xs={12} md={9}>
-                    <Paper sx={{ position: 'relative' }}>
+                <Grid item xs={12} md={9} size={8}>
+                    <Paper sx={{ position: 'relative',border: 'none', boxShadow: 'none'  }}>
                         <Slider {...sliderSettings}>
                             {slides.map((slide, index) => (
                                 <Box key={index} sx={{ position: 'relative' }}>
@@ -48,8 +47,9 @@ export default function Hero() {
                                         alt={`slide-${index}`}
                                         style={{
                                             width: '100%',
-                                            height: 300,
+                                            height: 400,
                                             objectFit: 'cover',
+                                            borderRadius: '20px'
                                         }}
                                     />
                                     <Box
@@ -57,7 +57,7 @@ export default function Hero() {
                                             position: 'absolute',
                                             top: 16,
                                             right: 16,
-                                            backgroundColor: '#004ba8',
+                                            // backgroundColor: '#004ba8',
                                             color: '#fff',
                                             px: 2,
                                             py: 1,
@@ -73,9 +73,9 @@ export default function Hero() {
                 </Grid>
 
                 {/* Cards - 30% */}
-                <Grid item xs={12} md={3} container direction="column" spacing={2}>
+                <Grid item xs={12} md={3} container direction="column" spacing={2} size={4}>
                     <Grid item>
-                        <Paper sx={{ height: 140, overflow: 'hidden' }}>
+                        <Paper sx={{ height: 240, overflow: 'hidden', borderRadius: '20px' }}>
                             <img
                                 src={photo1}
                                 alt="Cooling"
@@ -88,7 +88,7 @@ export default function Hero() {
                         </Paper>
                     </Grid>
                     <Grid item>
-                        <Paper sx={{ height: 140, overflow: 'hidden' }}>
+                        <Paper sx={{ height: 140, overflow: 'hidden', borderRadius: '20px' }}>
                             <img
                                 src={photo2}
                                 alt="Tea"
